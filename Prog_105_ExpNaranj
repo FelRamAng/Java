@@ -1,0 +1,54 @@
+import java.util.Scanner;
+
+public class Prog_105_ExpNaranj {
+    public static void main(String[] args) {
+        System.out.println("**************************************************");
+        System.out.println("**************************************************");
+        System.out.println("**                                              **");
+        System.out.println("**     Universidad Autónoma de Tamaulipas       **");
+        System.out.println("**           Facultad de Ingeniería             **");
+        System.out.println("**            ~Arturo Narro Siller~             **");
+        System.out.println("**    Ingeniería en Sistemas Computacionales    **");
+        System.out.println("**             1er. Grado, Grupo H              **");
+        System.out.println("**         Fundamentos de Programación          **");
+        System.out.println("**                                              **");
+        System.out.println("**             Prog_105_ExpNaranj               **");
+        System.out.println("**                                              **");
+        System.out.println("**              Desarrollado por:               **");
+        System.out.println("**        Ramírez Del Ángel Luis Felipe         **");
+        System.out.println("**                                              **");
+        System.out.println("**                                 18/11/2020   **");
+        System.out.println("**************************************************");
+        System.out.println("**************************************************");
+
+        Scanner scanner = new Scanner(System.in);
+
+        double TotPagar = 0.0, TotCompra = 0.0, Costkg = 0.0, kg = 0.0;
+
+        System.out.println("Escriba el Costo por 1 Kilo:");
+        Costkg = scanner.nextFloat();
+
+        for(int i = 1; i <= 15; i = i + 1)
+        {
+            System.out.println("Escriba Kilos del Cliente " + i + ": ");
+            kg = scanner.nextInt();
+
+            if(kg > 10)
+            {
+                TotPagar = (kg * Costkg) - ((kg * Costkg) * 0.15);
+                System.out.println("Descuento: $" + ((kg * Costkg) * 0.15));
+                System.out.println("Total a Pagar: $" + TotPagar);
+                TotCompra = TotCompra + TotPagar;
+            }
+            else
+            {
+                TotPagar = (kg * Costkg);
+                System.out.println("Descuento: $0");
+                System.out.println("Total a Pagar: $" + TotPagar);
+                TotCompra = TotCompra + TotPagar;
+            }
+            System.out.println("");
+        }
+        System.out.println("Ganancias de la Tienda: $" + TotCompra);
+    }
+}
