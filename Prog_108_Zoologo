@@ -1,0 +1,80 @@
+import java.util.Scanner;
+
+public class Prog_108_Zoologo {
+    public static void main(String[] args) {
+        System.out.println("**************************************************");
+        System.out.println("**************************************************");
+        System.out.println("**                                              **");
+        System.out.println("**     Universidad Autónoma de Tamaulipas       **");
+        System.out.println("**           Facultad de Ingeniería             **");
+        System.out.println("**            ~Arturo Narro Siller~             **");
+        System.out.println("**    Ingeniería en Sistemas Computacionales    **");
+        System.out.println("**             1er. Grado, Grupo H              **");
+        System.out.println("**         Fundamentos de Programación          **");
+        System.out.println("**                                              **");
+        System.out.println("**              Prog_108_Zoologo                **");
+        System.out.println("**                                              **");
+        System.out.println("**              Desarrollado por:               **");
+        System.out.println("**        Ramírez Del Ángel Luis Felipe         **");
+        System.out.println("**                                              **");
+        System.out.println("**                                 22/10/2020   **");
+        System.out.println("**************************************************");
+        System.out.println("**************************************************");
+
+        Scanner scanner = new Scanner(System.in);
+
+        int Cant = 0, Edad = 0, CantRang1 = 0, CantRang2 = 0, CantRang3 = 0;
+        double Porc1 = 0.0, Porc2 = 0.0, Porc3 = 0.0;
+        String Animal;
+
+        System.out.println("Escriba el animal a estudiar: ");
+        System.out.println("Elefantes");
+        System.out.println("Jirafas");
+        System.out.println("Chimpances");
+        Animal = scanner.nextLine();
+
+        if("Elefantes".equals(Animal))
+        {
+            Cant = 20;
+        }
+        else if("Jirafas".equals(Animal))
+        {
+            Cant = 15;
+        }
+        else if("Chimpances".equals(Animal))
+        {
+            Cant = 40;
+        }
+        else
+        {
+            System.out.println("Animal Incorrecto.");
+        }
+
+        for(int i = 1; i <= Cant; i = i + 1)
+        {
+            System.out.println("Edad Animal " + i + ": ");
+            Edad = scanner.nextInt();
+
+            if(Edad <= 1)
+            {
+                CantRang1 = CantRang1 + 1;
+            }
+            else if(Edad > 1 && Edad < 3)
+            {
+                CantRang2 = CantRang2 + 1;
+            }
+            else
+            {
+                CantRang3 = CantRang3 + 1;
+            }
+        }
+
+        Porc1 = (CantRang1 * 100) / Cant;
+        Porc2 = (CantRang2 * 100) / Cant;
+        Porc3 = (CantRang3 * 100) / Cant;
+
+        System.out.println("Porcentaje Rango 1: " + Porc1 + "%");
+        System.out.println("Porcentaje Rango 2: " + Porc2 + "%");
+        System.out.println("Porcentaje Rango 3: " + Porc3 + "%");
+    }
+}
