@@ -1,0 +1,62 @@
+import java.util.Scanner;
+
+public class Prog_106_AutCont {
+    public static void main(String[] args) {
+        System.out.println("**************************************************");
+        System.out.println("**************************************************");
+        System.out.println("**                                              **");
+        System.out.println("**     Universidad Autónoma de Tamaulipas       **");
+        System.out.println("**           Facultad de Ingeniería             **");
+        System.out.println("**            ~Arturo Narro Siller~             **");
+        System.out.println("**    Ingeniería en Sistemas Computacionales    **");
+        System.out.println("**             1er. Grado, Grupo H              **");
+        System.out.println("**         Fundamentos de Programación          **");
+        System.out.println("**                                              **");
+        System.out.println("**              Prog_106_AutCont                **");
+        System.out.println("**                                              **");
+        System.out.println("**              Desarrollado por:               **");
+        System.out.println("**        Ramírez Del Ángel Luis Felipe         **");
+        System.out.println("**                                              **");
+        System.out.println("**                                 22/10/2020   **");
+        System.out.println("**************************************************");
+        System.out.println("**************************************************");
+
+        Scanner scanner = new Scanner(System.in);
+
+        int Punt = 0, Max = 0, Min = 0, Sum = 0, IndMax = 0, IndMin = 0;
+        double Prom = 0.0;
+
+        for(int i = 1; i <= 5; i = i + 1)
+        {
+            System.out.println("Escriba los Puntos Contamiantes del Automóvil: " + i + ":");
+            Punt = scanner.nextInt();
+
+            Sum = Sum + Punt;
+
+            if( i == 1)
+            {
+                Max = Punt;
+                Min = Punt;
+            }
+            else
+            {
+                if(Punt > Max)
+                {
+                    Max = Punt;
+                    IndMax = i;
+                }
+                else if(Punt < Min)
+                {
+                    Min = Punt;
+                    IndMin = i;
+                }
+            }
+        }
+
+        Prom = Sum / 5;
+
+        System.out.println("Promedio: " + Prom);
+        System.out.println("Punto Mayor Contaminante: " + Max + " Automóvil No. " + IndMax);
+        System.out.println("Punto Menor Contaminante: " + Min + " Automóvil No. " + IndMin);
+    }
+}
