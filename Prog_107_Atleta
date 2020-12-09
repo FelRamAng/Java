@@ -1,0 +1,56 @@
+import java.util.Scanner;
+
+public class Prog_107_Atleta {
+    public static void main(String [] args) {
+        System.out.println("**************************************************");
+        System.out.println("**************************************************");
+        System.out.println("**                                              **");
+        System.out.println("**     Universidad Autónoma de Tamaulipas       **");
+        System.out.println("**           Facultad de Ingeniería             **");
+        System.out.println("**            ~Arturo Narro Siller~             **");
+        System.out.println("**    Ingeniería en Sistemas Computacionales    **");
+        System.out.println("**             1er. Grado, Grupo H              **");
+        System.out.println("**         Fundamentos de Programación          **");
+        System.out.println("**                                              **");
+        System.out.println("**               Prog_107_Atleta                **");
+        System.out.println("**                                              **");
+        System.out.println("**              Desarrollado por:               **");
+        System.out.println("**        Ramírez Del Ángel Luis Felipe         **");
+        System.out.println("**                                              **");
+        System.out.println("**                                 22/10/2020   **");
+        System.out.println("**************************************************");
+        System.out.println("**************************************************");
+
+        Scanner scanner = new Scanner(System.in);
+
+        int Suma = 0, Tiempo = 0;
+        boolean Apto = true;
+        double Prom = 0.0;
+
+        for(int i = 1; i <= 10; i = i + 1)
+        {
+            System.out.println("Escriba el Tiempo del Día " + i + "En Minutos:");
+            Tiempo = scanner.nextInt();
+
+            if(Tiempo > 16)
+            {
+                Apto = false;
+            }
+
+            Suma = Suma + Tiempo;
+        }
+
+        Prom = Suma / 10;
+
+        if( Apto == false || Prom > 15)
+        {
+            System.out.println("Usted No es Apto.");
+            System.out.println("Promedio: " + Prom);
+        }
+        else
+        {
+            System.out.println("Usted es Apto.");
+            System.out.println("Promedio: " + Prom);
+        }
+    }
+}
